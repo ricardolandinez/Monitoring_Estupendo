@@ -8,21 +8,21 @@ import { exit } from "process";
 
 dotenv.config()
 
-var startOfDay = new Date();
-startOfDay.setDate(startOfDay.getDate() - 25);
+let startOfDay = new Date();
+startOfDay.setDate(startOfDay.getDate() - 1);
 var currentMoment = new Date();
 
 const recepcionSinAcuse = [
     {
         $match: {
-            // receptor_id: {
-            //     $in: [
-            //         "5dbc8b9571b6a1449071d053",
-            //         "5d9fa224b85ff304d14e481d",
-            //         "5e57ea80f6e0166a9e7084e6",
-            //         "5de7d9d4c138067f12478700",
-            //         "5d780d6900679c1ffc549f8e"]
-            // },
+            receptor_id: {
+                $in: [
+                    "5dbc8b9571b6a1449071d053",
+                    "5d9fa224b85ff304d14e481d",
+                    "5e57ea80f6e0166a9e7084e6",
+                    "5de7d9d4c138067f12478700",
+                    "5d780d6900679c1ffc549f8e"]
+            },
             formaPago: "2",
             tipo_documento: "01",
             estado: { $ne: 5 },
