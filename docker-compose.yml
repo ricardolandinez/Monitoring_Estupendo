@@ -1,0 +1,13 @@
+version: '3'
+services:
+  reporting:
+    build:
+      args:
+        MONGO_CONNECTION_URI: ${MONGO_CONNECTION_URI}
+        SMTP_USER: ${SMTP_USER}
+        SMTP_PASSWORD: ${SMTP_PASSWORD}
+      dockerfile: Dockerfile
+    image: ricardolandinez/monitoring_estupendo
+    restart: always
+    container_name: monitoring-estupendo
+    
